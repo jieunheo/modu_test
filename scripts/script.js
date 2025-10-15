@@ -74,9 +74,10 @@
   });
 
   function endTimer() {
-    alert("Finish");
     clearInterval(timer);
     resetBtn();
+
+    alert("Finish");
   }
 
   function resetBtn() {
