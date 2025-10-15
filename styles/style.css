@@ -1,0 +1,233 @@
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+:root {
+  --color-white: #fff;
+  --color-blue: #5180ff;
+  --color-dark: #324577;
+  --color-light: #a5b6ee;
+  --color-btn-font: #617199;
+
+  --color-border: #354971;
+
+  --color-default: #324577;
+  --color-pause: #15c2b8;
+  --color-reset: #fb7099;
+  --color-copy: #8596bf;
+
+  --color-line-top: #3d538a;
+  --color-line-bottom: #5b75b4;
+
+  --gradient-bg: radial-gradient(
+    96.74% 276.79% at 3.59% 5.28%,
+    #f0f4ff 0%,
+    #a5b6ee 100%
+  );
+  --gradient-timer: linear-gradient(144.07deg, #5572bb 2.13%, #374b7c 102.97%);
+  --gradient-box: linear-gradient(314.28deg, #304577 0%, #4c65a0 83%);
+
+  --font-xl: 40px;
+  --font-l: 24px;
+  --font-m: 14px;
+  --font-s: 12px;
+}
+
+* {
+  font-family: "Pretendard";
+  font-size: var(--font-m);
+  color: var(--color-white);
+}
+
+button {
+  cursor: pointer;
+}
+
+/* 배경 */
+.container {
+  min-height: 100vh;
+  background: var(--gradient-bg);
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+/* header */
+.header .logo {
+}
+
+/* main */
+.main {
+  padding: 40px 44px;
+  background: var(--gradient-timer);
+  box-shadow: 20px 20px 60px 10px #374b7c66;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--font-l);
+  font-weight: bold;
+
+  margin-bottom: 23px;
+}
+.line {
+  width: 100%;
+  margin-bottom: 32px;
+  /* border-top: ; */
+}
+.line::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-line-top);
+}
+.line::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-line-bottom);
+}
+
+/* timer */
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+
+  margin-bottom: 40px;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.time .type {
+  font-size: var(--font-s);
+  font-weight: bold;
+  color: var(--color-light);
+}
+
+.time .box {
+  font-size: var(--font-xl);
+  font-weight: bold;
+  text-align: center;
+
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-box);
+
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.time + .time {
+  position: relative;
+}
+.time + .time::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 26px;
+  background: url(../imgs/dot.svg);
+
+  position: absolute;
+
+  top: calc(50% + 8px);
+  left: -14px;
+  transform: translateY(-50%);
+}
+
+/* btn-wrap */
+.btn-wrap {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 16px 23px;
+  border-radius: 50px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.btn.start {
+  background-color: var(--color-blue);
+}
+.btn.pause {
+  display: none;
+  background-color: var(--color-pause);
+}
+.btn.reset {
+  background-color: var(--color-reset);
+}
+.btn::before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: url(../imgs/icon-start.svg) no-repeat center center;
+}
+.btn.start::before {
+  background-image: url(../imgs/icon-start.svg);
+}
+.btn.pause::before {
+  background-image: url(../imgs/icon-stop.svg);
+}
+.btn.reset::before {
+  background-image: url(../imgs/icon-reset.svg);
+}
+.btn:disabled {
+  background-color: var(--color-default);
+  color: var(--color-btn-font);
+  cursor: auto;
+}
+.btn.start:disabled::before {
+  background-image: url(../imgs/icon-start-disabled.svg);
+}
+.btn.reset:disabled::before {
+  background-image: url(../imgs/icon-reset-disabled.svg);
+}
+
+/* footer */
+.footer {
+  color: #8596bf;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.copy {
+  color: var(--color-copy);
+}

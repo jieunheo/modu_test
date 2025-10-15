@@ -4,9 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>계산기</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
-    <script src="./js/script.js"></script>
+    <div class="container">
+      <header class="header">
+        <h1 class="logo">
+          <img class="logo-img" src="./imgs/weniv-logo.svg" alt="위니브" />
+        </h1>
+      </header>
+      <main class="main">
+        <h2 class="title">TIMER</h2>
+        <p class="line"></p>
+        <div class="timer">
+          <div class="time hrs">
+            <p class="type">HRS</p>
+            <div class="box" id="hrs">00</div>
+          </div>
+          <div class="time min">
+            <p class="type">MIN</p>
+            <div class="box" id="min">00</div>
+          </div>
+          <div class="time sec">
+            <p class="type">SEC</p>
+            <div class="box" id="sec">00</div>
+          </div>
+        </div>
+        <div class="btn-wrap">
+          <button id="btn-start" disabled class="btn start">START</button>
+          <button id="btn-stop" class="btn pause">PAUSE</button>
+          <button id="btn-reset" disabled class="btn reset">RESET</button>
+        </div>
+      </main>
+      <footer class="footer">
+        <small class="copy">ⓒ WENIV CORP.</small>
+      </footer>
+    </div>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>
